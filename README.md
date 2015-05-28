@@ -1,2 +1,31 @@
 # def-composer
 Module for creating and extending classes/objects from other objects/classes
+
+This will be an alternate syntax to the one used in the bakeIn repo, but it will have the same functionality, or at least that is the plan.
+
+```coffeescript
+def('BaseClass').compose(
+  attr1: true
+  attr2: false
+  constructor: ->
+    # do something
+)
+
+def('someObject').compose(
+  public: true
+  publich2: ->
+)
+
+
+def('User').compose(
+  BaseClass, ['attr1', 'attr2'],
+  OtherClass, ['public', 'publich2'],
+  constructor: ->
+  fn: (x)->
+    x * 2
+)
+
+zaggen = new User()
+```
+
+I'll be working on this, soon... maybe?
