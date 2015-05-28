@@ -28,4 +28,28 @@ def('User').compose(
 zaggen = new User()
 ```
 
+Or maybe an even cleaner syntax, like this 
+
+```coffeescript
+def('User')(
+  BaseClass, ['attr1', 'attr2'],
+  OtherClass, ['public', 'publich2'],
+  constructor: ->
+  fn: (x)->
+    x * 2
+)
+
+zaggen = new User()
+```
+Or if you don't need to specify what you inherit, you can use like this
+```coffeescript
+def('User')( BaseClass, OtherClass,{
+  constructor: ->
+  fn: (x)->
+    x * 2
+});
+
+zaggen = new User()
+```
+
 I'll be working on this, soon... maybe?
